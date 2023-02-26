@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: norm
+    database: group2
+    schema: norm
+    tables:
+      - name: t_customer
+      - name: t_order
+      - name: t_segment 
+      - name: t_state
+      - name: t_city
+      - name: t_region
+      - name: t_country
+      - name: t_employee
+      - name: t_category
+      - name: t_subcategory
+      - name: t_product
+      - name: t_postal_code
+      - name: t_ship_mode
+      - name: t_return
+      - name: t_order_line

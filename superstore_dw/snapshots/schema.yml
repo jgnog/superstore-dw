@@ -18,3 +18,4 @@ snapshots:
       - name: dbt_updated_at
         description: "The timestamp of when this record was last updated"
 
+
