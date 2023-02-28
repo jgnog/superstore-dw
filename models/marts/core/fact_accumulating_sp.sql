@@ -16,6 +16,5 @@ select
     profit,
     snapshot_date as created_at,
     dbt_valid_from as last_updated_at
-
 from fact
 where dbt_valid_to is null
