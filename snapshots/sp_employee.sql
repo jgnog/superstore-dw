@@ -1,4 +1,4 @@
-{% snapshot sp_employee= 'timestamp' %}
+{% snapshot sp_employee = 'check' %}
 
 {{
     config(

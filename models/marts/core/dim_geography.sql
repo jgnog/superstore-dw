@@ -1,5 +1,6 @@
 select
     dbt_scd_id as sk_geography,
+    city_id,
     city,
     state,
     region,

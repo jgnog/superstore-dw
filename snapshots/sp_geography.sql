@@ -1,4 +1,4 @@
-{% snapshot sp_geography= 'timestamp' %}
+{% snapshot sp_geography= 'check' %}
 
 {{
     config(
