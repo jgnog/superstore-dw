@@ -8,7 +8,6 @@
         check_cols=['customer_name', 'segment']
     )
 }}
-
 select
     c.*,
     CURRENT_TIMESTAMP as snapshot_date
