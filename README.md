@@ -12,6 +12,11 @@ On v1.0.1 the changes are:
 - To change root to -\superstore_dw
 - To test if everything is fine
 
+On v1.0.2 the changes are:
+- Setting up subdirectory on dbt account setting for the project.
+- Update schema.yml inside models directory to check model effects upon database
+- Obs. stg_employee is materialized as a view, not a table, on the dw schema
+
 ### Using the starter project
 
 Try running the following commands:
