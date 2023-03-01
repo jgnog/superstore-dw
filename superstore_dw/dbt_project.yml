@@ -3,14 +3,18 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'superstore_dw'
-version: '1.0.0'
+version: '1.0.1'
 config-version: 2
 
+# This setting is added in version 1.0.1 and set the root directory to 
+#the superstore_dw
+project-root: superstore_dw
+
 # This setting configures which "profile" dbt uses for this project.
-profile: 'superstore_dw'
+profile: 'default'
 
 # These configurations specify where dbt should look for different types of files.
-# The `model-paths` config, for example, states that models in this project can be
+# The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -33,5 +37,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   superstore_dw:
-    # Config indicated by + and applies to all files under models/example/
-    +materialized: table
+    # Applies to all files under models/example/
+    example:
+      materialized: view

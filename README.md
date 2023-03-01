@@ -1,5 +1,17 @@
 Welcome to your new dbt project!
 
+### This is a simple sandbox for learning dbt tools and some other cool stuff, I will use
+this README file to explain some configuration changes step by step.
+
+The first task on dbt will be to change dbt_project.yml to change the working directoty
+from root (default) to superstore_dw, after that perform a dbt test and dbt run to Check 
+if everything is fine.
+
+On v1.0.1 the changes are:
+- To name the project as superstore_dw
+- To change root to -\superstore_dw
+- To test if everything is fine
+
 ### Using the starter project
 
 Try running the following commands:
