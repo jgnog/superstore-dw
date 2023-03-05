@@ -64,4 +64,4 @@ from fact f
         f.order_date = d.date_date
     JOIN dates d1 ON
         f.ship_date = d1.date_date    
-nr_row= 1  
+where nr_row= 1  
