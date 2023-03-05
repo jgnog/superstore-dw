@@ -1,17 +1,17 @@
-{% snapshot sp_dim_order = 'check' %}
+{% snapshot sp_stg_fact_order %}
 
     {{
         config(
             target_schema='snapshots',
             strategy='check',
             unique_key='order_id',
-            check_cols=['order_status', 'ship_mode', 'sk_order_date','sk_shipped_date'],
+            check_cols=['ship_date','order_id']
         )
     }}
 
 select
     o.*,
     CURRENT_TIMESTAMP as snapshot_date
-from {{ ref('dim_order') }} o
+from {{ ref('stg_fact_order') }} o
 
 {% endsnapshot %}

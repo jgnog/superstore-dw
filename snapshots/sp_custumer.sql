@@ -1,4 +1,4 @@
-{% snapshot sp_customer= check %}
+{% snapshot sp_customer %}
 
 {{
     config(

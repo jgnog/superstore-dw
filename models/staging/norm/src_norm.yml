@@ -20,3 +20,4 @@ sources:
       - name: t_ship_mode
       - name: t_return
       - name: t_order_line
+      - name: t_shipment

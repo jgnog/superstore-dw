@@ -8,5 +8,3 @@ select
     snapshot_date as created_at,
     dbt_updated_at as last_updated_at
 from {{ ref("sp_customer") }}
-
-

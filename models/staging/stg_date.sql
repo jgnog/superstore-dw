@@ -2,11 +2,11 @@ with
     series_dates as (
         select
             generate_series(
-                (select min(order_date) as first_date from {{ ref("stg_order") }}),
-                (select max(ship_date) as last_date from {{ ref("stg_shipment") }}),
+               ( select min(order_date) as first_date from {{ source ( 'norm', 't_order')}}),
+                (select max(order_date) as last_date from {{ source ( 'norm', 't_order')}}),
                 '1 day'::interval
             )::date as order_date
-    )
+)
 select
     order_date as date_date,
     extract(day from order_date) as day,

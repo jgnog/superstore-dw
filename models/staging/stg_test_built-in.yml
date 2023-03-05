@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_customer
+    columns: 
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_employee
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_geography
+    columns:
+      - name: city_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_date
+    columns:
+      - name: date_date
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_order
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_order_line
+    columns:
+      - name: order_line_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_shipment
+    columns:
+      - name: shipment_id
+        tests:
+          - unique
+          - not_null

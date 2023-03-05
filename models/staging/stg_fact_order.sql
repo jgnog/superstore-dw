@@ -1,11 +1,11 @@
 with
 order_line as (
     select 
-    order_id,
-    count(*) as nr_of_order_lines,
-    sum(quantity) as quantity,
-    sum(sales) as sales,
-    sum(profit) as profit
+        order_id,
+        count(*) as nr_of_order_lines,
+        sum(quantity) as quantity,
+        sum(sales) as sales,
+        sum(profit) as profit
     from {{ref('stg_order_line')}}
     group by order_id
 ),
@@ -29,8 +29,14 @@ shipment as (
     left join {{ref ('stg_employee')}} as e on e.region_id = s.region_id
 ),
 final as (
-    select *
-    from orders
+    select *,
+    case 
+        when ship_mode is null and DATE_PART('day', AGE(ship_date, order_date)) is null 
+            then 'pending'
+            else 'shipped'
+        end as order_status,
+    DATE_PART('day', AGE(ship_date, order_date))as time_to_ship_days--(s.ship_date-o.order_date)
+    from orders 
     left join shipment using (order_id)
     join order_line using (order_id)
 )  
