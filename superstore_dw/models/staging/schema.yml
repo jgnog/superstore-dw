@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: norm
+    database: teacher
+    schema: norm
+    tables:
+     - name: t_employee
+     - name: t_region
+     - name: t_customer
+     - name: t_segment
+
+
+models:
+  - name: stg_employee
+    columns:
+      - name: employee_id
+        description: "A unique identifier for the employee"
+        tests:
+          - unique
+          - not_null
+      - name: employee_name
+        description: "The name of the employee"
+      - name: region
+        description: "The region this employee is responsible for"
+  - name: stg_customer
+    columns:
+      - name: customer_id
+        description: "A unique identifier for the customer"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "The name of the customer"
+      - name: segment
+        description: "The segment this customer belongs to"
