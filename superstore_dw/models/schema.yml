@@ -59,7 +59,8 @@ models:
   - name: dim_geography
     description: >
       Geogrpahy dimension table. Each record represents the state of
-      a city between the dates `valid_from` and `valid_to`. columns:
+      a city between the dates `valid_from` and `valid_to`.
+    columns:
       - name: sk_geography
         description: "A unique identifier for this record in the table"
         tests:
