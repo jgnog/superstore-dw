@@ -9,6 +9,9 @@ sources:
      - name: t_region
      - name: t_customer
      - name: t_segment
+     - name: t_city
+     - name: t_country
+     - name: t_state
 
 
 models:
@@ -34,3 +37,18 @@ models:
         description: "The name of the customer"
       - name: segment
         description: "The segment this customer belongs to"
+  - name: stg_city
+    columns:
+      - name: city_id
+        description: "A unique identifier for the city"
+        tests:
+          - unique
+          - not_null
+      - name: city_name
+        description: "The name of the city"
+      - name: state
+        description: "The state this city belongs to"
+      - name: country
+        description: "The country this city belongs to"
+      - name: region
+        description: "The region this city belongs to"
