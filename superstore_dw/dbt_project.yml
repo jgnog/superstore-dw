@@ -40,3 +40,7 @@ models:
 
 seeds:
   +schema: staging
+
+snapshots:
+  superstore_dw:
+    +target_schema: "snapshots"
