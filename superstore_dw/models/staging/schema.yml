@@ -12,6 +12,10 @@ sources:
      - name: t_city
      - name: t_country
      - name: t_state
+     - name: t_order
+     - name: t_order_line
+     - name: t_shipment
+     - name: t_ship_mode
 
 
 models:
@@ -52,3 +56,24 @@ models:
         description: "The country this city belongs to"
       - name: region
         description: "The region this city belongs to"
+  - name: stg_order_line
+    columns:
+      - name: order_line_id
+        description: "A unique identifier for the order line"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Unique identifier for the order. One order may contain more than one order line."
+      - name: order_date
+        description: "When the order was placed."
+      - name: customer_id
+        description: "The ID of the customer who placed the order."
+      - name: sales
+        description: "The amount of sales this order line represents."
+      - name: quantity
+        description: "The number of units of product ordered in this line."
+      - name: discount
+        description: "The discount percentage applied to this order line."
+      - name: profit
+        description: "The gross profit associated with this order line."
