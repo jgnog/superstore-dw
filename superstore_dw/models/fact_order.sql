@@ -6,8 +6,8 @@ with dimension_ids as (
         o.customer_id,
         ship.city_id,
         case
-            when ship.shipment_id is not null then 'Shipped'
             when ret.return_id is not null then 'Returned'
+            when ship.shipment_id is not null then 'Shipped'
             else 'Ordered'
         end as order_status,
         date_part('day', ship.ship_date::timestamp - o.order_date::timestamp) as time_to_ship_days,
