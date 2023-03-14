@@ -16,6 +16,7 @@ sources:
      - name: t_order_line
      - name: t_shipment
      - name: t_ship_mode
+     - name: t_return
 
 
 models:
@@ -92,3 +93,12 @@ models:
         description: "The city the order was shipped to."
       - name: ship_date
         description: "When the order was shipped."
+  - name: stg_return
+    columns:
+      - name: return_id
+        description: "A unique identifier for the return."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "The order that was returned."
