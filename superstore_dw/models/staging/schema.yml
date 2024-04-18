@@ -2,7 +2,6 @@ version: 2
 
 sources:
   - name: norm
-    database: teacher
     schema: norm
     tables:
      - name: t_employee
