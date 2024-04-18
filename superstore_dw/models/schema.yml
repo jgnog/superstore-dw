@@ -1,14 +1,5 @@
 version: 2
 
-sources:
-  - name: norm
-    schema: norm
-    tables:
-     - name: t_employee
-     - name: t_region
-     - name: t_customer
-     - name: t_segment
-
 models:
   - name: dim_date
     description: Date dimension table
