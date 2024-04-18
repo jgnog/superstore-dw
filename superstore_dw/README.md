@@ -37,3 +37,11 @@ To build the final models, simply run
 ```
 dbt run --select final
 ```
+
+## Tests
+
+Finally, you can run the tests with
+
+```
+dbt test
+```
