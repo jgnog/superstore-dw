@@ -1,15 +1,39 @@
-Welcome to your new dbt project!
+# Superstore Data Warehouse
 
-### Using the starter project
+This is a sample dbt project for educational purposes.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Seeds
 
+This project contains a CSV seed containing data for a date dimension table.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+Import it into a table called `dim_date` in your data warehouse by running:
+
+```
+dbt seed
+```
+
+## Snapshots
+
+The project contains snapshots used to track dimension attribute changes.
+They use staging models as sources, so you need to update them before updating
+the snapshots.
+
+Update the staging models by running
+
+```
+dbt run --select staging
+```
+
+Update the snapshots by running
+
+```
+dbt snapshot
+```
+
+## Final run
+
+To build the final models, simply run
+
+```
+dbt run --select final
+```
